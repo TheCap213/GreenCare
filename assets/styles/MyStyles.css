@@ -5,14 +5,7 @@
     padding: 0;
 }
 
-.features {
-    font-family: "Poppins", system-ui, -apple-system, sans-serif;
-    background: radial-gradient(268.8% 141.72% at 9.57% 78.08%, #D2F5CE 0%, #FFF 100%);
-    margin: 0;
-    padding: 0;
-}
-
-.aboutUs {
+body {
     font-family: "Poppins", system-ui, -apple-system, sans-serif;
     background: radial-gradient(268.8% 141.72% at 9.57% 78.08%, #D2F5CE 0%, #FFF 100%);
     margin: 0;
@@ -555,6 +548,137 @@
     line-height: 1.4;
 }
 
+/* STYLES FOR HOW DOES IT WORK*/
+#how_page {
+    padding: 40px 0 80px;
+}
+
+.how_header {
+    margin-bottom: 40px;
+}
+
+.how_header_content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px
+}
+
+.how_header_content h1 {
+    font-size: 70px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.10);
+    background: linear-gradient(115deg, #008E84 1.77%, #6DD831 94.29%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.how_header_content p {
+    max-width: 650px;
+    font-size: 30px;
+    color: #5A5C59;
+    font-weight: 600;
+}
+
+.how_header_content img {
+    max-width: 380px;
+    width: 100%;
+}
+
+.how_step {
+    margin-bottom: 60px;
+}
+
+.how_step_content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.how_step-2 .how_step_content,
+.how_step-4 .how_step_content {
+    flex-direction: row;
+}
+
+.how_step_image img {
+    max-width: 500px;
+    width: 100%;
+    display: block;
+}
+
+.how_step_card {
+    position: relative;
+    flex: 1;
+    background: #FFF;
+    border-radius: 10px;
+    padding: 22px 26px 22px 62px;
+    box-shadow: 5px 4px 4px 0 rgba(0, 0, 0, 0.25);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.how_step_number {
+    position: absolute;
+    left: 20px;
+    top: 18px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #01C48E;
+    color: #FFF;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.how_step_card p {
+    margin: 0;
+    font-size: 25px;
+    line-height: 1.45;
+    font-weight: 600;
+    color: #5A5C59;
+}
+
+.how_step_card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+    z-index: 5;
+}
+
+@media (max-width: 900px) {
+    .how_header_content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .how_header_text p {
+        max-width: 100%;
+    }
+
+    .how_step_content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .how_step-2 .how_step_content,
+    .how_step-4 .how_step_content {
+        flex-direction: column;
+    }
+
+    .how_step_card {
+        padding: 18px 18px 18px 50px;
+        max-width: 100%;
+    }
+
+    .how_step_number {
+        left: 12px;
+        top: 12px;
+    }
+}
 
 /* FOOTER STYLES */
 .footer {
