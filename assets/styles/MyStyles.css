@@ -53,6 +53,30 @@ body {
     font-size: 21px;
     font-weight: 550;
     text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav a:hover {
+    color: #00e0a8;
+    transform: translateY(-2px);
+    text-shadow: 0 2px 8px rgba(1, 196, 142, 0.3);
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 5px;
+    left: 50%;
+    background: linear-gradient(115deg, #008E84 1.77%, #6DD831 94.29%);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav a:hover::after {
+    width: 80%;
 }
 
 .header_auth {
@@ -66,6 +90,10 @@ body {
 .header_signup {
     text-decoration: none;
     font-weight: 550;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 8px;
 }
 
 .header_login {
@@ -78,8 +106,22 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
+.header_login:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(115deg, #00a598 1.77%, #7ee63f 94.29%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.header_login:hover .header_earth {
+    transform: rotate(15deg);
+    filter: brightness(1.1);
+}
+
 .header_auth img {
     width: 25px;
+    transition: all 0.3s ease;
 }
 
 .header_divider {
@@ -90,6 +132,12 @@ body {
 
 .header_signup {
     color: #01C48E;
+}
+
+.header_signup:hover {
+    transform: translateY(-2px);
+    color: #00e0a8;
+    text-shadow: 0 2px 8px rgba(1, 196, 142, 0.3);
 }
 
 /* HERO SECTION STYLES - INICIO */

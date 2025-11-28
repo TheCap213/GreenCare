@@ -1,0 +1,272 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenCare - Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles/dashboard.css">
+</head>
+
+<body>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <img src="assets/Images/GreenCare.png" alt="GreenCare Logo" class="sidebar-logo">
+            <button class="sidebar-toggle" id="sidebar-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="Dashboard.html" class="nav-item active">
+                <span class="nav-icon">📊</span>
+                <span class="nav-text">Dashboard</span>
+            </a>
+            <a href="mis-plantas.html" class="nav-item">
+                <span class="nav-icon">🌿</span>
+                <span class="nav-text">Mis Plantas</span>
+            </a>
+            <a href="diagnostico.html" class="nav-item">
+                <span class="nav-icon">🔍</span>
+                <span class="nav-text">Diagnóstico</span>
+            </a>
+            <a href="comunidad.html" class="nav-item">
+                <span class="nav-icon">👥</span>
+                <span class="nav-text">Comunidad</span>
+            </a>
+            <a href="notificaciones.html" class="nav-item">
+                <span class="nav-icon">🔔</span>
+                <span class="nav-text">Notificaciones</span>
+                <span class="notification-badge">3</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="perfil.html" class="nav-item">
+                <span class="nav-icon">⚙️</span>
+                <span class="nav-text">Configuración</span>
+            </a>
+            <a href="Index.html" class="nav-item logout">
+                <span class="nav-icon">🚪</span>
+                <span class="nav-text">Cerrar Sesión</span>
+            </a>
+        </div>
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div class="topbar-left">
+                <h1 class="page-title">Dashboard</h1>
+                <p class="page-subtitle">Bienvenido de vuelta, Usuario</p>
+            </div>
+            <div class="topbar-right">
+                <div class="search-box">
+                    <input type="text" placeholder="Buscar plantas...">
+                    <span class="search-icon">🔍</span>
+                </div>
+                <div class="user-profile" onclick="window.location.href='perfil.html'" style="cursor: pointer;">
+                    <img src="https://ui-avatars.com/api/?name=Usuario&background=01C48E&color=fff" alt="Usuario"
+                        class="user-avatar">
+                    <span class="user-name">Usuario</span>
+                </div>
+            </div>
+        </header>
+
+
+        <div class="dashboard-container">
+
+            <section class="welcome-banner">
+                <div class="banner-content">
+                    <h2>¡Bienvenido a GreenCare! 🌱</h2>
+                    <p>Mantén tus plantas saludables con diagnósticos inteligentes</p>
+                    <button class="btn-primary" id="add-plant-btn">
+                        <span>+</span> Agregar Nueva Planta
+                    </button>
+                </div>
+                <div class="banner-illustration">
+                    <img src="assets/Images/plantas.png" alt="Plantas">
+                </div>
+            </section>
+
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon green">🌿</div>
+                    <div class="stat-content">
+                        <h3 class="stat-number">12</h3>
+                        <p class="stat-label">Plantas Registradas</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon blue">🔍</div>
+                    <div class="stat-content">
+                        <h3 class="stat-number">24</h3>
+                        <p class="stat-label">Diagnósticos Realizados</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon yellow">⚠️</div>
+                    <div class="stat-content">
+                        <h3 class="stat-number">3</h3>
+                        <p class="stat-label">Alertas Pendientes</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon purple">✅</div>
+                    <div class="stat-content">
+                        <h3 class="stat-number">89%</h3>
+                        <p class="stat-label">Plantas Saludables</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="content-grid">
+
+                <section class="card">
+                    <div class="card-header">
+                        <h3>Últimos Diagnósticos</h3>
+                        <a href="diagnostico.html" class="card-action">Ver todos →</a>
+                    </div>
+                    <div class="diagnostic-list">
+                        <div class="diagnostic-item">
+                            <img src="assets/Images/placeholder1.png" alt="Planta" class="diagnostic-image">
+                            <div class="diagnostic-info">
+                                <h4>Suculenta</h4>
+                                <p class="diagnostic-status healthy">✓ Saludable</p>
+                                <span class="diagnostic-date">Hace 2 días</span>
+                            </div>
+                        </div>
+                        <div class="diagnostic-item">
+                            <img src="assets/Images/placeholder2.png" alt="Planta" class="diagnostic-image">
+                            <div class="diagnostic-info">
+                                <h4>Higuera</h4>
+                                <p class="diagnostic-status warning">⚠ Requiere atención</p>
+                                <span class="diagnostic-date">Hace 5 días</span>
+                            </div>
+                        </div>
+                        <div class="diagnostic-item">
+                            <img src="assets/Images/placeholder3.png" alt="Planta" class="diagnostic-image">
+                            <div class="diagnostic-info">
+                                <h4>Costilla de Adan</h4>
+                                <p class="diagnostic-status healthy">✓ Saludable</p>
+                                <span class="diagnostic-date">Hace 1 semana</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section class="card">
+                    <div class="card-header">
+                        <h3>Alertas y Recordatorios</h3>
+                        <a href="notificaciones.html" class="card-action">Gestionar →</a>
+                    </div>
+                    <div class="alert-list">
+                        <div class="alert-item priority-high">
+                            <span class="alert-icon">⚠️</span>
+                            <div class="alert-content">
+                                <h4>Riego urgente</h4>
+                                <p>Tu Ficus necesita agua</p>
+                                <span class="alert-time">Hoy, 10:30 AM</span>
+                            </div>
+                        </div>
+                        <div class="alert-item priority-medium">
+                            <span class="alert-icon">💧</span>
+                            <div class="alert-content">
+                                <h4>Riego programado</h4>
+                                <p>3 plantas necesitan agua mañana</p>
+                                <span class="alert-time">Mañana, 9:00 AM</span>
+                            </div>
+                        </div>
+                        <div class="alert-item priority-low">
+                            <span class="alert-icon">🌱</span>
+                            <div class="alert-content">
+                                <h4>Fertilización</h4>
+                                <p>Aplicar fertilizante a suculentas</p>
+                                <span class="alert-time">En 3 días</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section class="card">
+                    <div class="card-header">
+                        <h3>Acciones Rápidas</h3>
+                    </div>
+                    <div class="quick-actions">
+                        <button class="action-btn" onclick="window.location.href='diagnostico.html'">
+                            <span class="action-icon">📸</span>
+                            <span class="action-text">Nuevo Diagnóstico</span>
+                        </button>
+                        <button class="action-btn" onclick="window.location.href='mis-plantas.html'">
+                            <span class="action-icon">➕</span>
+                            <span class="action-text">Registrar Planta</span>
+                        </button>
+                        <button class="action-btn">
+                            <span class="action-icon">📊</span>
+                            <span class="action-text">Ver Estadísticas</span>
+                        </button>
+                        <button class="action-btn" onclick="window.location.href='comunidad.html'">
+                            <span class="action-icon">💬</span>
+                            <span class="action-text">Ir a Comunidad</span>
+                        </button>
+                    </div>
+                </section>
+
+
+                <section class="card tip-card">
+                    <div class="card-header">
+                        <h3>💡 Consejo del Día</h3>
+                    </div>
+                    <div class="tip-content">
+                        <p>
+                            <strong>Riego inteligente:</strong> La mayoría de las plantas de interior prefieren
+                            que la tierra se seque ligeramente entre riegos. Introduce tu dedo 2-3 cm en la
+                            tierra antes de regar.
+                        </p>
+                        <button class="btn-secondary">Más consejos</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+
+    <nav class="mobile-nav">
+        <a href="Dashboard.html" class="mobile-nav-item active">
+            <span class="mobile-icon">📊</span>
+            <span class="mobile-label">Inicio</span>
+        </a>
+        <a href="mis-plantas.html" class="mobile-nav-item">
+            <span class="mobile-icon">🌿</span>
+            <span class="mobile-label">Plantas</span>
+        </a>
+        <a href="diagnostico.html" class="mobile-nav-item floating">
+            <span class="mobile-icon">📸</span>
+        </a>
+        <a href="comunidad.html" class="mobile-nav-item">
+            <span class="mobile-icon">👥</span>
+            <span class="mobile-label">Comunidad</span>
+        </a>
+        <a href="notificaciones.html" class="mobile-nav-item">
+            <span class="mobile-icon">🔔</span>
+            <span class="mobile-label">Alertas</span>
+        </a>
+    </nav>
+
+    <script src="assets/scripts/dashboard.js"></script>
+</body>
+
+</html>

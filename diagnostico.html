@@ -1,0 +1,276 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenCare - Diagnóstico</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles/dashboard.css">
+    <link rel="stylesheet" href="assets/styles/diagnostico.css">
+</head>
+
+<body>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <img src="assets/Images/GreenCare.png" alt="GreenCare Logo" class="sidebar-logo">
+            <button class="sidebar-toggle" id="sidebar-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="Dashboard.html" class="nav-item">
+                <span class="nav-icon">📊</span>
+                <span class="nav-text">Dashboard</span>
+            </a>
+            <a href="mis-plantas.html" class="nav-item">
+                <span class="nav-icon">🌿</span>
+                <span class="nav-text">Mis Plantas</span>
+            </a>
+            <a href="diagnostico.html" class="nav-item active">
+                <span class="nav-icon">🔍</span>
+                <span class="nav-text">Diagnóstico</span>
+            </a>
+            <a href="comunidad.html" class="nav-item">
+                <span class="nav-icon">👥</span>
+                <span class="nav-text">Comunidad</span>
+            </a>
+            <a href="notificaciones.html" class="nav-item">
+                <span class="nav-icon">🔔</span>
+                <span class="nav-text">Notificaciones</span>
+                <span class="notification-badge">3</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="perfil.html" class="nav-item">
+                <span class="nav-icon">⚙️</span>
+                <span class="nav-text">Configuración</span>
+            </a>
+            <a href="Index.html" class="nav-item logout">
+                <span class="nav-icon">🚪</span>
+                <span class="nav-text">Cerrar Sesión</span>
+            </a>
+        </div>
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div class="topbar-left">
+                <h1 class="page-title">Diagnóstico IA</h1>
+                <p class="page-subtitle">Analiza la salud de tus plantas con inteligencia artificial</p>
+            </div>
+            <div class="topbar-right">
+                <div class="user-profile" onclick="window.location.href='perfil.html'" style="cursor: pointer;">
+                    <img src="https://ui-avatars.com/api/?name=Usuario&background=01C48E&color=fff" alt="Usuario"
+                        class="user-avatar">
+                    <span class="user-name">Usuario</span>
+                </div>
+            </div>
+        </header>
+
+
+        <div class="diagnostico-container">
+
+            <section class="upload-section card">
+                <h2>Sube una foto de tu planta</h2>
+                <p class="section-subtitle">Nuestro sistema de IA analizará la imagen y detectará posibles problemas</p>
+
+                <div class="upload-area" id="upload-area">
+                    <input type="file" id="image-input" accept="image/*" hidden>
+
+                    <div class="upload-prompt" id="upload-prompt">
+                        <div class="upload-icon">📸</div>
+                        <h3>Arrastra tu imagen aquí</h3>
+                        <p>o haz clic para seleccionar</p>
+                        <button class="btn-select-image" id="select-image-btn">
+                            Seleccionar Imagen
+                        </button>
+                        <div class="upload-tips">
+                            <p><strong>Consejos para mejores resultados:</strong></p>
+                            <ul>
+                                <li>✓ Foto con buena iluminación natural</li>
+                                <li>✓ Enfoque claro en las hojas afectadas</li>
+                                <li>✓ Evita sombras y reflejos</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="image-uploaded" id="image-uploaded" style="display: none;">
+                        <img id="uploaded-image" src="" alt="Imagen cargada">
+                        <div class="image-actions">
+                            <button class="btn-secondary" id="change-image-btn">
+                                📷 Cambiar Imagen
+                            </button>
+                            <button class="btn-primary" id="analyze-btn">
+                                🔍 Analizar Planta
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="results-section" id="results-section" style="display: none;">
+
+                <div class="analyzing-state card" id="analyzing-state">
+                    <div class="analyzing-animation">
+                        <div class="spinner-large"></div>
+                        <h3>Analizando imagen...</h3>
+                        <p>Nuestro modelo de IA está procesando tu planta</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                        <span class="progress-text" id="progress-text">0%</span>
+                    </div>
+                </div>
+
+
+                <div class="results-display" id="results-display" style="display: none;">
+
+                    <div class="card diagnosis-card">
+                        <div class="card-header">
+                            <h3>📋 Diagnóstico</h3>
+                            <span class="confidence-badge">Confianza: 92%</span>
+                        </div>
+                        <div class="diagnosis-content">
+                            <div class="diagnosis-main">
+                                <div class="problem-detected">
+                                    <span class="problem-icon warning">⚠️</span>
+                                    <div>
+                                        <h4>Deficiencia de Nitrógeno</h4>
+                                        <p>Se detectaron hojas amarillentas en la parte inferior de la planta</p>
+                                    </div>
+                                </div>
+                                <div class="severity-indicator">
+                                    <span class="label">Nivel de urgencia:</span>
+                                    <div class="severity-bar">
+                                        <div class="severity-fill medium"></div>
+                                    </div>
+                                    <span class="severity-text">Moderado</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card treatment-card">
+                        <div class="card-header">
+                            <h3>💊 Tratamiento Recomendado</h3>
+                        </div>
+                        <div class="treatment-content">
+                            <div class="treatment-steps">
+                                <div class="step">
+                                    <span class="step-number">1</span>
+                                    <div class="step-content">
+                                        <h4>Fertilización inmediata</h4>
+                                        <p>Aplica fertilizante rico en nitrógeno (NPK 10-5-5)</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <span class="step-number">2</span>
+                                    <div class="step-content">
+                                        <h4>Ajustar riego</h4>
+                                        <p>Asegúrate de regar consistentemente, dejando secar ligeramente entre riegos
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <span class="step-number">3</span>
+                                    <div class="step-content">
+                                        <h4>Monitoreo</h4>
+                                        <p>Revisa el progreso en 1-2 semanas y repite diagnóstico</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card info-card">
+                        <h4>ℹ️ Información Adicional</h4>
+                        <p><strong>Prevención:</strong> Fertiliza cada 2-3 semanas durante la temporada de crecimiento.
+                        </p>
+                        <p><strong>Pronóstico:</strong> Con tratamiento adecuado, la planta debería recuperarse en 2-4
+                            semanas.</p>
+                    </div>
+
+
+                    <div class="result-actions">
+                        <button class="btn-secondary" id="new-diagnosis-btn">
+                            🔄 Nuevo Diagnóstico
+                        </button>
+                        <button class="btn-secondary" id="save-result-btn">
+                            💾 Guardar Resultado
+                        </button>
+                        <button class="btn-primary" id="share-result-btn">
+                            📤 Compartir en Comunidad
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="card recent-diagnostics">
+                <div class="card-header">
+                    <h3>Diagnósticos Recientes</h3>
+                    <a href="#" class="card-action">Ver todos →</a>
+                </div>
+                <div class="diagnostics-list">
+                    <div class="diagnostic-item-mini">
+                        <img src="assets/Images/placeholder1.png" alt="Diagnóstico">
+                        <div class="diagnostic-info-mini">
+                            <h5>Suculenta</h5>
+                            <p class="status success">✓ Saludable</p>
+                            <span class="date">Hace 2 días</span>
+                        </div>
+                    </div>
+                    <div class="diagnostic-item-mini">
+                        <img src="assets/Images/placeholder2.png" alt="Diagnóstico">
+                        <div class="diagnostic-info-mini">
+                            <h5>Higuera</h5>
+                            <p class="status warning">⚠️ Requiere atención</p>
+                            <span class="date">Hace 5 días</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+    <nav class="mobile-nav">
+        <a href="Dashboard.html" class="mobile-nav-item">
+            <span class="mobile-icon">📊</span>
+            <span class="mobile-label">Inicio</span>
+        </a>
+        <a href="mis-plantas.html" class="mobile-nav-item">
+            <span class="mobile-icon">🌿</span>
+            <span class="mobile-label">Plantas</span>
+        </a>
+        <a href="diagnostico.html" class="mobile-nav-item floating active">
+            <span class="mobile-icon">📸</span>
+        </a>
+        <a href="comunidad.html" class="mobile-nav-item">
+            <span class="mobile-icon">👥</span>
+            <span class="mobile-label">Comunidad</span>
+        </a>
+        <a href="notificaciones.html" class="mobile-nav-item">
+            <span class="mobile-icon">🔔</span>
+            <span class="mobile-label">Alertas</span>
+        </a>
+    </nav>
+
+    <script src="assets/scripts/dashboard.js"></script>
+    <script src="assets/scripts/diagnostico.js"></script>
+</body>
+
+</html>
